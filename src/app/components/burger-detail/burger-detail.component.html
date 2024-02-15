@@ -1,0 +1,13 @@
+<a [routerLink]="['/burger']" class="btn btn-primary">Retour en arriere</a>
+<div *ngIf="burger" class="card" style="width: 18rem;">
+  <img src="{{burger.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{burger.nom}}</h5>
+    <br>
+    <span *ngIf="!burger.isVege" class="badge bg-danger">Viande animal</span>
+    <span *ngIf="burger.isVege" class="badge bg-success">Végétarien</span>
+    <p class="card-text">nombre steack : {{burger.steack}}</p>
+    <p class="card-text">type de pain : {{burger.pain}}</p>
+    <p class="card-text">Sauce : {{burger.sauce}}</p>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<a [routerLink]="['/pizza']" class="btn btn-primary">Retour en arriere</a>
+<div *ngIf="pizza" class="card" style="width: 18rem;">
+  <img src="{{pizza.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{pizza.nom}}</h5>
+    <br>
+    <span *ngIf="!pizza.isVege" class="badge bg-danger">Viande animal</span>
+    <span *ngIf="pizza.isVege" class="badge bg-success">Végétarien</span>
+    <p class="card-text">Base : {{pizza.base}}</p>
+    <p class="card-text">taille : {{pizza.taille}} cm</p>
+  </div>
+</div>
+

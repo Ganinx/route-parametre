@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let pizza of pizzas" class="card" style="width: 18rem;">
+      <img src="{{pizza.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{pizza.nom}}</h5>
+        <p class="card-text">Base: {{pizza.base}}</p>
+        <a [routerLink]="['/pizza',pizza.id]" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+

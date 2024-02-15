@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let burger of burgers" class="card" style="width: 18rem;">
+      <img src="{{burger.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{burger.nom}}</h5>
+        <p class="card-text">nombre steack : {{burger.steack}}</p>
+        <a [routerLink]="['/burger',burger.id]" class="btn btn-primary">voir le detail</a>
+      </div>
+    </div>
+  </div>
+</div>
+
