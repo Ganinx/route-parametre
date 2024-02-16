@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Burger} from "../models/burger";
+import {Pizza} from "../models/pizza";
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,19 @@ export class BurgerService {
   }
   getById(id:number):Burger{
     return this.burgers.filter(burger => burger.id == id)[0];
+  }
+
+  add(burger: Burger){
+    let id : number=this.burgers.length + 1
+
+    burger.id = id
+
+    this.burgers.push(burger)
+  }
+
+  remove(burgerRemove:Burger): Burger[]{
+    this.burgers = this.burgers.filter(burger => burger !==burgerRemove  )
+    return this.burgers
   }
 
 }

@@ -6,8 +6,19 @@
         <h5 class="card-title">{{burger.nom}}</h5>
         <p class="card-text">nombre steack : {{burger.steack}}</p>
         <a [routerLink]="['/burger',burger.id]" class="btn btn-primary">voir le detail</a>
+        <button class="btn btn-danger" (click)="openDelete(content,burger)">supprimer</button>
       </div>
     </div>
   </div>
 </div>
+
+<<ng-template #content #burger let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirmation de suppression</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close(burger)">Supprimer</button>
+  </div>
+</ng-template>
 

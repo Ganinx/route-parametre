@@ -6,8 +6,19 @@
         <h5 class="card-title">{{pizza.nom}}</h5>
         <p class="card-text">Base: {{pizza.base}}</p>
         <a [routerLink]="['/pizza',pizza.id]" class="btn btn-primary">Go somewhere</a>
+        <button class="btn btn-danger" (click)="openDelete(content,pizza)">supprimer</button>
       </div>
     </div>
   </div>
 </div>
+
+<<ng-template #content #pizza let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirmation de suppression</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close(pizza)">Supprimer</button>
+  </div>
+</ng-template>
 
